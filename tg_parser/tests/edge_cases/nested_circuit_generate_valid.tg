@@ -1,0 +1,7 @@
+circuit MatrixNand(in a[4], b[4]; out result[4]) {
+    generate i from 0 to 3 {
+        generate j from 0 to 3 {
+            NAND2 g_i_j(a[i], b[j]) -> result[i];
+        }
+    }
+}

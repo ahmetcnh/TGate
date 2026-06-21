@@ -1,0 +1,4 @@
+gate Floating(in a; out y) {
+}
+
+simulate Floating(a=0);

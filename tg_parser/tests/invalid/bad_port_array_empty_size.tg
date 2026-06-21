@@ -1,0 +1,2 @@
+circuit BadPort(in a[]; out y) {
+}

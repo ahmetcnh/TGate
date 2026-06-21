@@ -1,0 +1,3 @@
+gate BadOrder(in a; out y) {
+    pmos gate=a, drain=y, source=VDD;
+}

@@ -1,0 +1,5 @@
+gate BadGate(in a; out y) {
+    generate i from 0 to 3 {
+        NAND2 g_i(a, a) -> y;
+    }
+}

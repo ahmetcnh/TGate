@@ -1,0 +1,20 @@
+gate NAND2(in a, b; out y) {
+    node internal_net;
+    pmos drain=y, gate=a, source=VDD;
+    pmos drain=y, gate=b, source=VDD;
+    nmos drain=y, gate=a, source=internal_net;
+    nmos drain=internal_net, gate=b, source=GND;
+}
+
+circuit HalfAdder(in a, b; out sum, carry) {
+    wire w1, w2, w3;
+    NAND2 g1(a, b) -> w1;
+    NAND2 g2(a, w1) -> w2;
+    NAND2 g3(b, w1) -> w3;
+    NAND2 g4(w2, w3) -> sum;
+    NAND2 g5(w1, w1) -> carry;
+}
+
+simulate HalfAdder(a=0, b=0);
+simulate HalfAdder(a=0, b=1);
+simulate HalfAdder(a=1, b=1);

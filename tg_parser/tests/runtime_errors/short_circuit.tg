@@ -1,0 +1,6 @@
+gate AlwaysShort(in a; out y) {
+    pmos drain=y, gate=GND, source=VDD;
+    nmos drain=y, gate=VDD, source=GND;
+}
+
+simulate AlwaysShort(a=0);

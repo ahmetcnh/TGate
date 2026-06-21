@@ -1,0 +1,3 @@
+gate BadNet(in a; out y) {
+    pmos drain=1, gate=a, source=VDD;
+}

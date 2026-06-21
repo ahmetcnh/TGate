@@ -1,0 +1,3 @@
+gate BadTrans(in a; out y) {
+    nmos drain=y gate=a, source=GND;
+}

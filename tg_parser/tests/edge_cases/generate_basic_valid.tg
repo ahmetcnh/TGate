@@ -1,0 +1,5 @@
+circuit NandArray(in a[4], b[4]; out y[4]) {
+    generate i from 0 to 3 {
+        NAND2 g_i(a[i], b[i]) -> y[i];
+    }
+}

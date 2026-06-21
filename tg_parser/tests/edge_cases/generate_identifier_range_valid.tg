@@ -1,0 +1,5 @@
+circuit ParamArray(in a[4]; out y[4]) {
+    generate i from 0 to N {
+        BUF b_i(a[i]) -> y[i];
+    }
+}

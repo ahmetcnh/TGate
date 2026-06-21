@@ -1,0 +1,15 @@
+gate INV(in a; out y) {
+    pmos drain=y, gate=a, source=VDD;
+    nmos drain=y, gate=a, source=GND;
+}
+
+circuit C(in a[2]; out y[2]) {
+    generate i from 0 to 1 {
+        INV g_i(a[i]) -> y[i];
+    }
+    generate i from 0 to 1 {
+        INV g_i(a[i]) -> y[i];
+    }
+}
+
+simulate C(a=[0, 1]);

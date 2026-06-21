@@ -1,0 +1,3 @@
+gate G(in a; out y) {
+    wire w;
+}

@@ -1,0 +1,8 @@
+gate INV_ARRAY(in a[N]; out y[N]) {
+    generate i from 0 to N-1 {
+        pmos drain=y[i], gate=a[i], source=VDD;
+        nmos drain=y[i], gate=a[i], source=GND;
+    }
+}
+
+simulate INV_ARRAY(a=[0, 1, 0, 1]);

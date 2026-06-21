@@ -1,0 +1,11 @@
+gate NAND2(in a, b; out y) {
+    node internal_net;
+    pmos drain=y, gate=a, source=VDD;
+    pmos drain=y, gate=b, source=VDD;
+    nmos drain=y, gate=a, source=internal_net;
+    nmos drain=internal_net, gate=b, source=GND;
+}
+
+simulate NAND2(a=0, b=0);
+simulate NAND2(a=0, b=1);
+simulate NAND2(a=!0, b=1 | 0 & 1);

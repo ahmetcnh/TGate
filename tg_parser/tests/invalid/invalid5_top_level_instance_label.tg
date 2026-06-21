@@ -1,0 +1,9 @@
+gate NAND2(in a, b; out y) {
+    node n;
+    pmos drain=n, gate=a, source=VDD;
+    pmos drain=y, gate=b, source=n;
+    nmos drain=y, gate=a, source=GND;
+    nmos drain=y, gate=b, source=GND;
+}
+
+NAND2 myGate(0, 1);

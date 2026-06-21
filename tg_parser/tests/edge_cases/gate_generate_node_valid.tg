@@ -1,0 +1,7 @@
+gate COMPLEX_ARRAY(in a[4]; out y[4]) {
+    generate i from 0 to 3 {
+        node mid_i;
+        pmos drain=mid_i, gate=a[i], source=VDD;
+        nmos drain=y[i], gate=a[i], source=mid_i;
+    }
+}

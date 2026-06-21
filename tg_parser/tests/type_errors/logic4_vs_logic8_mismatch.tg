@@ -1,0 +1,20 @@
+param N = 4;
+param M = 8;
+
+gate BUF(in a; out y) {
+    pmos drain=y, gate=a, source=VDD;
+    nmos drain=y, gate=a, source=GND;
+}
+
+gate BUF_ARRAY(in a[M]; out y[M]) {
+    generate i from 0 to M-1 {
+        pmos drain=y[i], gate=a[i], source=VDD;
+        nmos drain=y[i], gate=a[i], source=GND;
+    }
+}
+
+circuit Top(in x[N]; out z[M]) {
+    BUF_ARRAY g1(x) -> z;
+}
+
+simulate Top(x=[0, 0, 0, 0]);

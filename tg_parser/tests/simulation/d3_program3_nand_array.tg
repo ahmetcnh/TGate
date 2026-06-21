@@ -1,0 +1,15 @@
+gate NAND2(in a, b; out y) {
+    node internal_net;
+    pmos drain=y, gate=a, source=VDD;
+    pmos drain=y, gate=b, source=VDD;
+    nmos drain=y, gate=a, source=internal_net;
+    nmos drain=internal_net, gate=b, source=GND;
+}
+
+circuit NAND_ARRAY(in a[4], b[4]; out y[4]) {
+    generate i from 0 to 3 {
+        NAND2 g_i(a[i], b[i]) -> y[i];
+    }
+}
+
+simulate NAND_ARRAY(a=[0, 0, 0, 1], b=[1, 0, 1, 1]);

@@ -1,0 +1,14 @@
+gate INV(in a; out y) {
+    pmos drain=y, gate=a, source=VDD;
+    nmos drain=y, gate=a, source=GND;
+}
+
+circuit C(in a; out y) {
+    wire w;
+    generate j from 0 to 0 {
+        INV g_0(a) -> w;
+    }
+    INV g_leak(a) -> j;
+}
+
+simulate C(a=0);

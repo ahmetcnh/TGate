@@ -1,0 +1,4 @@
+gate GND(in a; out y) {
+    pmos drain=y, gate=a, source=VDD;
+    nmos drain=y, gate=a, source=GND;
+}

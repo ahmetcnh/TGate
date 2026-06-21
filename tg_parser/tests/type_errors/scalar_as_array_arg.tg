@@ -1,0 +1,9 @@
+gate INV4(in a[4]; out y[4]) {
+    generate i from 0 to 3 {
+        pmos drain=y[i], gate=a[i], source=VDD;
+        nmos drain=y[i], gate=a[i], source=GND;
+    }
+}
+circuit C(in a; out y[4]) {
+    INV4 g1(a) -> y;
+}

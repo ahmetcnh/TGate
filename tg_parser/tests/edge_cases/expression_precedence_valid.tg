@@ -1,0 +1,1 @@
+simulate NAND2(a=!0, b=1 & 0 | 1);

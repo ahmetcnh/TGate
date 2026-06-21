@@ -1,0 +1,10 @@
+gate INV(in a; out y) {
+    pmos drain=y, gate=a, source=VDD;
+    nmos drain=y, gate=a, source=GND;
+}
+
+circuit Top(in x[1]; out z) {
+    INV g1(x) -> z;
+}
+
+simulate Top(x=[0]);

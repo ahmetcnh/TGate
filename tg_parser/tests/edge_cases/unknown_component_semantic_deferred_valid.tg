@@ -1,0 +1,4 @@
+circuit C(in a; out y) {
+    wire w;
+    UnknownGate g1(a) -> y;
+}

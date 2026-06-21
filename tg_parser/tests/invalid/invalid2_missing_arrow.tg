@@ -1,0 +1,4 @@
+circuit BadCircuit(in a, b; out y) {
+    wire w1;
+    NAND2 g1(a, b) w1;
+}

@@ -1,0 +1,5 @@
+circuit IndexedExample(in a[2]; out y[2]) {
+    wire w[2];
+    NAND2 g0(a[0], a[1]) -> w[0];
+    NAND2 g1(w[0], a[1]) -> y[1];
+}

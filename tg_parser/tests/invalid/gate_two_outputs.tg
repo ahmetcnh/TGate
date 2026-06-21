@@ -1,0 +1,3 @@
+gate BadGateOut(in a; out y, z) {
+    pmos drain=y, gate=a, source=VDD;
+}

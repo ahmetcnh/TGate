@@ -1,0 +1,4 @@
+circuit C(in a, b; out x, y) {
+    wire w1, w2;
+    HalfAdder h1(a, b) -> { sum = w1, carry = w2 };
+}

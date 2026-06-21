@@ -1,0 +1,8 @@
+gate INV(in a; out y) {
+    pmos drain=y, gate=a, source=VDD;
+    nmos drain=y, gate=a, source=GND;
+}
+circuit C(in a, b; out y) {
+    wire w;
+    INV g1(a, b) -> y;
+}

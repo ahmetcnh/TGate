@@ -1,0 +1,3 @@
+circuit C(in a; out y) {
+    node n;
+}

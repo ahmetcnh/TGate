@@ -1,0 +1,5 @@
+circuit BadGenerate(in a[4]; out y[4]) {
+    generate i from 0 3 {
+        NAND2 g_i(a[i], a[i]) -> y[i];
+    }
+}
